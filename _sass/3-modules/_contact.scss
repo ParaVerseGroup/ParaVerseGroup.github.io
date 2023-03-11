@@ -11,6 +11,15 @@
   margin-bottom: 32px;
 }
 
+.contact-description {
+  font-size: 21px;
+  color: var(--text-alt-color);
+
+  @media only screen and (max-width: $mobile) {
+    font-size: inherit;
+  }
+}
+
 .form__group {
   margin-bottom: 20px;
 
@@ -24,20 +33,19 @@
   padding: 20px;
   font-size: 16px;
   font-weight: 400;
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
+  border: 1.5px solid rgba(103, 115, 135, 0.35);
+  border-radius: 8px;
   outline: 0;
-  transition: .2s ease-in-out;
+  transition: .25s ease-in-out;
   resize: vertical;
   color: var(--heading-font-color);
-  background-color: var(--background-color);
+  background: var(--background-color);
 
   &::placeholder {
     color: var(--text-alt-color);
   }
 
   &:focus {
-    border-color: var(--primary-color);
-    background-color: transparent;
+    border-color: var(--brand-color);
   }
 }

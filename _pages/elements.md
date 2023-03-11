@@ -2,6 +2,7 @@
 layout: page
 title: Elements
 permalink: /elements/
+image: '/images/38.jpg'
 ---
 
 A paragraph looks like this — Globally incubate standards compliant channels before scalable benefits. Quickly disseminate superior deliverables whereas web-enabled applications. Quickly drive clicks-and-mortar catalysts for change before vertical architectures. Credibly reintermediate backend ideas for cross-platform models. Continually reintermediate integrated processes through technically sound intellectual capital. Holistically foster superior methodologies.
@@ -59,7 +60,7 @@ A paragraph looks like this — Globally incubate standards compliant channels b
 
 ## Quotes
 
-### A quote looks like this:
+#### A quote looks like this:
 
 > The longer I live, the more I realize that I am never wrong about anything, and that all the pains I have so humbly taken to verify my notions have only wasted my time!
 >
@@ -71,7 +72,7 @@ A paragraph looks like this — Globally incubate standards compliant channels b
 
 ## Syntax Highlighter
 
-{% highlight css %}
+```css
 body {
   margin: 0;
   display: flex;
@@ -90,9 +91,9 @@ li {
   vertical-align: top;
   margin: 5px;
 }
-{% endhighlight %}
+```
 
-{% highlight js %}
+```js
   $('.top').click(function () {
     $('html, body').stop().animate({ scrollTop: 0 }, 'slow', 'swing');
   });
@@ -103,35 +104,38 @@ li {
       $('.top').removeClass("top-active");
     };
   });
-{% endhighlight %}
+```
 
 ***
 
 ## Images
 
-![Woman]({{site.baseurl}}/images/12.jpg#wide)
-*Photo by [Pawan Thapa](https://unsplash.com/photos/dS9oU7oJcqY) on [Unsplash](https://unsplash.com/)*
+![Rom]({{site.baseurl}}/images/39.jpg#wide)
+*Photo by [Jairph](https://unsplash.com/photos/FC9J9L04xuM) on [Unsplash](https://unsplash.com/)*
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/post-1.jpg" loading="lazy">
-    <img src="/images/post-2.jpg" loading="lazy">
-    <img src="/images/post-3.jpg" loading="lazy">
-    <img src="/images/post-4.jpg" loading="lazy">
-    <img src="/images/post-8.jpg" loading="lazy">
-    <img src="/images/post-5.jpg" loading="lazy">
+    <img src="/images/07.jpg" loading="lazy">
+    <img src="/images/04.jpg" loading="lazy">
+    <img src="/images/09.jpg" loading="lazy">
+    <img src="/images/06.jpg" loading="lazy">
+    <img src="/images/03.jpg" loading="lazy">
+    <img src="/images/08.jpg" loading="lazy">
+    <img src="/images/20.jpg" loading="lazy">
+    <img src="/images/24.jpg" loading="lazy">
+    <img src="/images/21.jpg" loading="lazy">
   </div>
   <em>Gallery / <a href="https://unsplash.com/" target="_blank">Unsplash</a></em>
 </div>
 
-![Sea]({{site.baseurl}}/images/post-7.jpg)
-*Photo by [Daniel Monteiro](https://unsplash.com/photos/iK2MdOKSmj8) on [Unsplash](https://unsplash.com/)*
+![Italy]({{site.baseurl}}/images/23.jpg)
+*Photo by [Juliana Malta](https://unsplash.com/photos/tHXX4fl3-ms) on [Unsplash](https://unsplash.com/)*
 
 ***
 
 ## Youtube Embed
 
-<p><iframe src="https://www.youtube.com/embed/NFTstL115nY" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe src="https://www.youtube.com/embed/2b2gJu-g3qE" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
 
 ***
 

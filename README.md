@@ -1,12 +1,12 @@
-# Akio – Creative Portfolio Theme for Jekyll
+# Mria is a multipurpose Jekyll blog theme.
 
-Akio is a creative personal portfolio Jekyll theme. This theme has a modern design and high-speed performance. The highlights of this theme include support Github Pages, light and dark mode, and also sections such as work, blog, clients, and testimonials. Perfectly suitable for any developer, designer, freelancer, software engineer, or some other who needs a professional way to showcase their work.
+Mria is a high-quality multipurpose Jekyll theme with a unique style and clean code. You can use Mria for multipurpose like blog, magazine, portfolio, etc. This theme is fully responsive, and it looks good on all types of screens and devices. If you’re looking for a theme that is clean, high performance, and simple, the Mria theme is exactly what you’re looking for then.
 
 * * *
 
 ### Demo
 
-Check the theme in action [Live Demo](https://akio-jekyll.netlify.app/) |
+Check the theme in action [Live Demo](https://mria.netlify.app/) |
 [Artem Sheludko](https://jekyllthemes.io/developers/artem-sheludko)
 
 * * *
@@ -14,14 +14,15 @@ Check the theme in action [Live Demo](https://akio-jekyll.netlify.app/) |
 ### Theme features
 
 - Works with GitHub Pages (host it for free)
-- Dark and light mode user can select themself
+- Dark and light mode
 - No jQuery, only vanilla JS
 - 100% responsive Design
-- Clean Code
+- Clean and Modern Code
 - Optimized for mobile devices
-- Section Blog
-- Section Works
-- Section Testimonials
+- Section featured posts
+- Section blog
+- Section videos
+- Section tag
 - Super fast performance ⚡⚡⚡
 - Social sharing buttons
 - Scroll to top button
@@ -30,7 +31,11 @@ Check the theme in action [Live Demo](https://akio-jekyll.netlify.app/) |
 - Medium style image zoom
 - Image Lazy loading
 - Image gallery
+- Tag page
+- Author page
 - Custom logo support
+- Support for multiple authors
+- Supports video posts
 - Supports contact form (Formspree)
 - Supports MailChimp newsletter
 - Supports Disqus comments
@@ -59,7 +64,7 @@ I would recommend checking the [Deployment Methods](https://jekyllrb.com/docs/de
 
 ### Documentation
 
-Before using the Akio theme, please read the attached documentation.
+Before using the Mria theme, please read the attached documentation.
 
 * * *
 

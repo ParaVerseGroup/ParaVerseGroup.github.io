@@ -1,7 +1,5 @@
 /* Header */
 .header {
-  margin-bottom: 20px;
-
   .header__inner {
     position: relative;
     display: flex;
@@ -9,10 +7,8 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 40px $base-spacing-unit;
-  }
 
-  @media (max-width: $mobile) {
-    .header__inner {
+    @media only screen and (max-width: $mobile) {
       padding: 32px $base-spacing-unit;
     }
   }
@@ -20,11 +16,16 @@
 
 /* Logo */
 .logo__link {
-  font-family: $heading-font-family;
+  padding: 4px 0;
   font-size: 32px;
   line-height: 1;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -1px;
   transition: color .25s ease;
+
+  &:hover {
+    color: var(--brand-color);
+  }
 }
 
 .logo__image {
@@ -33,8 +34,11 @@
 
 /* Nav */
 .main-nav {
+  display: flex;
+  flex: 1 0;
+  align-items: center;
 
-  @media (max-width: $desktop) {
+  @media only screen and (max-width: $desktop) {
     position: absolute;
     top: 88px;
     right: $base-spacing-unit;
@@ -43,7 +47,6 @@
     min-width: 160px;
     padding: 20px 24px;
     border-radius: 8px;
-    border-top: 3px solid var(--primary-color);
     transform: translate3d(0, 10px, 0);
     opacity: 0;
     visibility: hidden;
@@ -55,7 +58,7 @@
       z-index: 100;
       opacity: 1;
       visibility: visible;
-      transform: translate3d(0, 0, 0);
+      transform: translate3d(0,0,0);
     }
 
     .nav__list {
@@ -83,18 +86,15 @@
           min-width: auto;
           border: none;
           box-shadow: none;
+          background-color: inherit;
 
           .nav__link {
             display: block;
             padding: 10px 0;
-            font-size: 18px;
+            font-size: 17px;
 
-            &:hover {
-              color: var(--primary-color);
-            }
-
-            &.active-link {
-              color: var(--primary-color);
+            &:last-child {
+              margin-bottom: 8px;
             }
           }
         }
@@ -102,35 +102,24 @@
         .nav__link {
           display: block;
           padding: 10px 0;
-          margin-bottom: 0;
-          font-size: 18px;
+          font-size: 17px;
           text-align: right;
           transition: color .25s ease;
-
-          &::before {
-            content: none;
-          }
-
-          &.active-link {
-            color: var(--primary-color);
-          }
-
-          &:hover {
-            color: var(--primary-color);
-          }
-
-          .arrow-down {
-            display: none;
-          }
         }
       }
     }
   }
 }
 
+
 .main-nav__box {
   display: flex;
   align-items: center;
+  margin-left: auto;
+
+  @media only screen and (max-width: $desktop) {
+    display: block;
+  }
 }
 
 .nav__list {
@@ -139,7 +128,7 @@
 
   .nav__item {
     display: inline-block;
-    margin-right: 36px;
+    margin-right: 48px;
     margin-bottom: 0;
 
     &:last-child {
@@ -149,41 +138,14 @@
     .nav__link {
       position: relative;
       padding: 12px 0;
-      font-family: $heading-font-family;
-      font-size: 18px;
+      font-size: 17px;
       line-height: 1;
-      font-weight: 500;
-      transition: color .2s ease;
-
-      &::before {
-        content: "";
-        position: absolute;
-        display: block;
-        width: 6px;
-        right: 0;
-        top: 8px;
-        transform: translateX(100%);
-        height: 6px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all .2s;
-        border-radius: 50%;
-        background-color: var(--text-alt-color-2);
-      }
+      font-weight: 600;
+      will-change: transform;
+      transition: color .25s ease;
 
       &:hover {
-        &::before {
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-
-      &.active-link {
-        &::before {
-          opacity: 1;
-          visibility: visible;
-          background-color: var(--primary-color);
-        }
+        color: var(--brand-color);
       }
     }
 
@@ -203,59 +165,69 @@
       }
 
       .dropdown-toggle {
-        color: var(--link-color);
         cursor: pointer;
+        color: var(--link-color);
+
+        &:hover {
+          color: var(--brand-color);
+        }
 
         &::before {
           content: none;
         }
       }
     }
-  }
 
-  .dropdown-menu {
-    position: absolute;
-    top: calc(100% + 6px);
-    left: -32px;
-    transform: translate3d(0, 8px, 0);
-    backface-visibility: hidden;
-    z-index: 100;
-    min-width: 150px;
-    display: block;
-    padding: 20px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all .25s ease;
-    border-top: 3px solid var(--primary-color);
-    border-radius: 8px;
-    box-shadow: 0 15px 40px 5px rgba(20, 20, 20, 0.07);
-    background-color: var(--background-color);
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: -32px;
+      transform: translate3d(0, 10px, 0);
+      backface-visibility: hidden;
+      z-index: 100;
+      min-width: 150px;
+      display: block;
+      padding: 16px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .25s ease;
+      border-radius: 8px;
+      box-shadow: 0 15px 40px 5px rgba(20, 20, 20, 0.07);
+      background-color: var(--background-color);
 
-    .nav__link {
-      position: relative;
-      display: flex;
-      padding: 6px 12px;
-      margin-bottom: 4px;
-      font-size: 17px;
-      line-height: 1;
-      will-change: transform;
+      .nav__link {
+        position: relative;
+        display: flex;
+        padding: 8px 16px;
+        font-size: 16px;
+        line-height: 1;
+        will-change: transform;
 
-      &:hover {
-        color: var(--primary-color);
-      }
+        &:last-child {
+          margin-bottom: 0;
+        }
 
-      &:last-child {
-        margin-bottom: 0;
-      }
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          border-radius: 4px;
+          transition: opacity .2s;
+          background-color: var(--brand-color);
+        }
 
-      &.active-link {
-        color: var(--primary-color);
-      }
-
-      &::before {
-        content: none;
+        &::before {
+          content: none;
+        }
       }
     }
+
   }
 }
 
@@ -264,24 +236,17 @@
     .dropdown-menu {
       background-color: var(--background-alt-color);
     }
-    @media (max-width: $desktop) {
+    @media only screen and (max-width: $desktop) {
       background-color: var(--background-alt-color);
     }
   }
 }
 
-.nav-button {
-  display: flex;
-  align-items: center;
-}
-
 /* Humburger Menu */
 .hamburger {
-  width: 24px;
-  height: 20px;
-  margin-right: 12px;
+  width: 28px;
+  height: 28px;
   display: none;
-  color: var(--link-color);
   cursor: pointer;
 
   @media only screen and (max-width: $desktop) {
@@ -293,8 +258,8 @@
 .hamburger div,
 .hamburger div:after,
 .hamburger div:before {
-  width: 24px;
-  height: 3px;
+  width: 28px;
+  height: 4px;
   border-radius: 10px;
   transition: all 0.15s linear;
   background-color: var(--heading-font-color);
@@ -326,41 +291,55 @@
   transform: rotate(-45deg);
 }
 
+.nav-button {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  font-size: 24px;
+  color: var(--link-color);
+  cursor: pointer;
+
+  .icon__search {
+    transition: color .25s ease;
+
+    &:hover {
+      color: var(--brand-color);
+    }
+  }
+
+  @media only screen and (max-width: $desktop) {
+    display: flex;
+    justify-content: end;
+  }
+}
+
 /* Toggle Theme */
 .toggle-theme {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
   user-select: none;
   cursor: pointer;
 
-  &.theme-light {
-    transform: none;
-    cursor: auto;
-
-    .toggle-sun {
-      display: block;
-    }
-  }
-
-  &.theme-dark {
-    transform: none;
-    cursor: auto;
-
-    .toggle-moon {
-      display: block;
-    }
+  @media only screen and (max-width: $desktop) {
+    margin-right: 10px;
   }
 }
 
 .toggle-sun,
 .toggle-moon {
   position: absolute;
-  font-size: 22px;
-  color: var(--link-color);
+  font-size: 23px;
+  transition: color .25s ease;
+  color: var(--heading-font-color);
+
+  &:hover {
+    color: var(--brand-color);
+  }
 }
 
 .toggle-sun {

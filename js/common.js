@@ -1,23 +1,34 @@
 document.addEventListener("DOMContentLoaded", function() {
   'use strict';
 
-  var html = document.querySelector('html'),
+  const html = document.querySelector('html'),
+    globalWrap = document.querySelector('.global-wrap'),
+    body = document.querySelector('body'),
     menuToggle = document.querySelector(".hamburger"),
     menuList = document.querySelector(".main-nav"),
-    toggleTheme = document.querySelector(".toggle-theme-js"),
+    searchOpenIcon = document.querySelector(".icon__search"),
+    searchCloseIcon = document.querySelector(".search__close"),
+    searchInput = document.querySelector(".search__text"),
+    search = document.querySelector(".search"),
+    searchBox = document.querySelector(".search__box"),
+    toggleTheme = document.querySelector(".toggle-theme"),
     btnScrollToTop = document.querySelector(".top");
 
 
   /* =======================================================
-  // Menu + Theme Switcher
+  // Menu + Search + Theme Switcher
   ======================================================= */
   menuToggle.addEventListener("click", () => {
     menu();
   });
 
-  function menuOpen() {
-    menuList.classList.add("is-open");
-  }
+  searchOpenIcon.addEventListener("click", () => {
+    searchOpen();
+  });
+
+  searchCloseIcon.addEventListener("click", () => {
+    searchClose();
+  });
 
 
   // Menu
@@ -26,14 +37,40 @@ document.addEventListener("DOMContentLoaded", function() {
     menuList.classList.toggle("is-visible");
   }
 
+  // Search
+  function searchOpen() {
+    search.classList.add("is-visible");
+    body.classList.add("search-is-visible");
+    globalWrap.classList.add("is-active");
+    menuToggle.classList.remove("is-open");
+    menuList.classList.remove("is-visible");
+    setTimeout(function () {
+      searchInput.focus();
+    }, 250);
+  }
+
+  function searchClose() {
+    search.classList.remove("is-visible");
+    body.classList.remove("search-is-visible");
+    globalWrap.classList.remove("is-active");
+  }
+
+  searchBox.addEventListener("keydown", function(event) {
+    if (event.target == this || event.keyCode == 27) {
+      search.classList.remove('is-visible');
+      body.classList.remove("search-is-visible");
+      globalWrap.classList.remove("is-active");
+    }
+  });
+
+
+  // Theme Switcher
   if (toggleTheme) {
     toggleTheme.addEventListener("click", () => {
       darkMode();
     });
   };
 
-
-  // Theme Switcher
   function darkMode() {
     if (html.classList.contains('dark-mode')) {
       html.classList.remove('dark-mode');
@@ -44,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
       localStorage.setItem("theme", "dark");
       document.documentElement.setAttribute("dark", "");
     }
-  }
+  };
 
 
   /* ================================================================
@@ -56,69 +93,90 @@ document.addEventListener("DOMContentLoaded", function() {
     toggleTheme.addEventListener("click", () => {
       stopAnimation();
     });
-
-    window.addEventListener("resize", () => {
-      stopAnimation();
-    });
-
-    function stopAnimation() {
-      document.body.classList.add("disable-animation");
-      clearTimeout(disableTransition);
-      disableTransition = setTimeout(() => {
-        document.body.classList.remove("disable-animation");
-      }, 100);
-    }
   }
+
+  window.addEventListener("resize", () => {
+    stopAnimation();
+  });
+
+  function stopAnimation() {
+    document.body.classList.add("disable-animation");
+    clearTimeout(disableTransition);
+    disableTransition = setTimeout(() => {
+      document.body.classList.remove("disable-animation");
+    }, 100);
+  };
+
+
+  // =====================
+  // Simple Jekyll Search
+  // =====================
+  SimpleJekyllSearch({
+    searchInput: document.getElementById("js-search-input"),
+    resultsContainer: document.getElementById("js-results-container"),
+    json: "/search.json",
+    searchResultTemplate: '<a class="search-results__item" href="{url}"><div class="search-results__image"><img src="{image}" alt="{title}"></div> <div class="search-results__content"><time class="search-results__date" datetime="{date}">{date}</time><div class="search-results__title">{title}</div></div></a>',
+    noResultsText: '<h4 class="no-results">No results found...</h4>'
+  });
 
 
   /* =======================
   // Responsive Videos
   ======================= */
-  reframe(".post iframe:not(.reframe-off), .page iframe:not(.reframe-off)");
+  reframe(".post__content iframe:not(.reframe-off), .page__content iframe:not(.reframe-off)");
 
 
   /* =======================
   // LazyLoad Images
   ======================= */
-  var lazyLoadInstance = new LazyLoad({
+  const lazyLoadInstance = new LazyLoad({
     elements_selector: ".lazy"
-  })
+  });
 
 
   /* =======================
   // Zoom Image
   ======================= */
-  const lightense = document.querySelector(".page img, .post img, .gallery__image img"),
-  imageLink = document.querySelectorAll(".page a img, .post a img, .gallery__image a img");
+  const lightense = document.querySelector(".page__content img, .post__content img, .gallery__image img"),
+  imageLink = document.querySelectorAll(".page__content a img, .post__content a img, .gallery__image a img");
 
   if (imageLink) {
-    for (var i = 0; i < imageLink.length; i++) imageLink[i].parentNode.classList.add("image-link");
-    for (var i = 0; i < imageLink.length; i++) imageLink[i].classList.add("no-lightense");
-  }
+    for (const i = 0; i < imageLink.length; i++) imageLink[i].parentNode.classList.add("image-link");
+    for (const i = 0; i < imageLink.length; i++) imageLink[i].classList.add("no-lightense");
+  };
 
   if (lightense) {
-    Lightense(".page img:not(.no-lightense), .post img:not(.no-lightense), .gallery__image img:not(.no-lightense)", {
+    Lightense(".page__content img:not(.no-lightense), .post__content img:not(.no-lightense), .gallery__image img:not(.no-lightense)", {
     padding: 60,
     offset: 30
     });
-  }
+  };
 
 
-  // =====================
-  // Load More Posts
-  // =====================
-  var load_posts_button = document.querySelector('.load-more-posts');
+  /* =======================
+  // Convert Hex to RGBA
+  ======================= */
+  const hex2rgba = (hex, alpha = 0.15) => {
+  const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
+    return `rgba(${r},${g},${b},${alpha})`;
+  };
+  const imageCover = document.querySelectorAll('.tag-color-js');
 
-  load_posts_button&&load_posts_button.addEventListener("click",function(e){e.preventDefault();var o=document.querySelector(".pagination"),e=pagination_next_url.split("/page")[0]+"/page/"+pagination_next_page_number+"/";fetch(e).then(function(e){if(e.ok)return e.text()}).then(function(e){var n=document.createElement("div");n.innerHTML=e;for(var t=document.querySelector(".grid"),a=n.querySelectorAll(".grid__post"),i=0;i<a.length;i++)t.appendChild(a.item(i));new LazyLoad({elements_selector:".lazy"});pagination_next_page_number++,pagination_next_page_number>pagination_available_pages_number&&(o.style.display="none")})});
+
+  // Adds a linear gradient to posts
+  function linearGradient() {
+    for (var i = 0; i < imageCover.length; i++) {
+      const dataAttribute = hex2rgba(imageCover[i].getAttribute('data-accent'));
+      imageCover[i].style.background= dataAttribute;
+    }
+  };
+
+  linearGradient();
 
 
   /* =======================
   // Scroll Top Button
   ======================= */
-  window.addEventListener("scroll", function () {
-    window.scrollY > window.innerHeight ? btnScrollToTop.classList.add("is-active") : btnScrollToTop.classList.remove("is-active");
-  });
-
   btnScrollToTop.addEventListener("click", function () {
     if (window.scrollY != 0) {
       window.scrollTo({

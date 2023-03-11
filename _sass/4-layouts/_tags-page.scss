@@ -1,68 +1,53 @@
 /* Tags */
 .tags__inner {
+  margin-bottom: 68px;
 
   &.is-hidden {
     display: none;
   }
 
   .tag__info {
-    max-width: 840px;
-    margin: 40px auto 60px;
-    padding-bottom: 60px;
+    padding: 60px 0;
     text-align: center;
-    border-bottom: 1px solid var(--border-color);
-  }
 
-  .tag__counter {
-    position: absolute;
-    top: -8px;
-    padding: 4px 10px;
-    font-size: 18px;
-    line-height: 1.2;
-    font-weight: normal;
-    border-radius: 30px;
-    background-color: var(--background-alt-color);
-  }
+    @media only screen and (max-width: $desktop) {
+      padding: 40px 0;
+    }
 
+    @media only screen and (max-width: $mobile) {
+      padding: 32px 0;
+    }
+  }
+  
   .tag__name {
-    position: relative;
     margin-bottom: 0;
-    font-size: 62px;
+    font-size: 52px;
+    line-height: 1;
     text-transform: capitalize;
   }
+  
+  .tag__counter {
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+  }
 
-  .tag__link {
-    margin-top: 4px;
-    font-size: 21px;
-    color: var(--text-alt-color);
-
-    a {
-      font-weight: 500;
-
-      &:hover {
-        box-shadow: 0 -1px 0 0 var(--primary-color) inset, 0 -2px 0 0 var(--primary-color) inset;
-      }
+  @media only screen and (max-width: $tablet) {
+    .tag__name {
+      margin-bottom: 16px;
+      font-size: 40px;
     }
   }
 
-  @media (max-width: $desktop) {
-    .tag__info {
-      margin: 40px auto;
-      padding-bottom: 40px;
-    }
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 48px;
 
     .tag__name {
-      font-size: 48px;
-    }
-
-    .tag__link {
-      font-size: 18px;
-    }
-  }
-
-  @media (max-width: $mobile) {
-    .tag__name {
-      font-size: 36px;
+      font-size: 32px;
+      margin-bottom: 12px;
     }
   }
 }
