@@ -25,6 +25,8 @@ menu__settings:
           url: '/research/'
     - title: 'ABOUT'
       submenu:
+        - title: 'About us'
+          url: '/about/'
         - title: 'Team'
           url: '/team/'
         - title: 'Career'
@@ -104,9 +106,10 @@ footer__description: A scalable and flexible Everything to Vehicle (X2V) smart c
 
 # Social Links
 social:
+- {icon: "help-circle", link: "https://medium.commedium.com"}
 - {icon: "linkedin", link: "https://www.linkedin.com/company/paraverse-group/https://www.linkedin.com/company/paraverse-group/"}
 - {icon: "slack", link: "https://paraverse-group.slack.com/join/shared_invite/zt-1d0dsns2r-USGamHXDKlBNA9ADha0XHg#/shared-invite/emailhttps://paraverse-group.slack.com/join/shared_invite/zt-1d0dsns2r-USGamHXDKlBNA9ADha0XHg#/shared-invite/email"}
-- {icon: "discord", link: "https://discord.com/invite/Y7fYRm5SByhttps://discord.com/invite/Y7fYRm5SBy"}
+- {icon: "help-circle", link: "https://discord.com/invite/Y7fYRm5SByhttps://discord.com/invite/Y7fYRm5SBy"}
 
 # Example of adding a new link to the footer - {icon: "instagram", link: "https://instagram.com"}
 # Other icons can be found at https://ionicons.com/v4/
@@ -117,10 +120,14 @@ footer__menu__settings:
   menu__items:
     - title: 'Home'
       url: '/'
-    - title: 'Contact'
-      url: '/contact/'
+    - title: 'About us'
+      url: '/about/'
     - title: 'Team'
       url: '/team/'
+    - title: 'Career'
+      url: '/career/'
+    - title: 'Contact'
+      url: '/contact/'
 
 #-------------------------------
 # Contact Settings
