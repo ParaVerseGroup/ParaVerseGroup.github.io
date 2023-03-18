@@ -28,9 +28,9 @@ collections:
   authors:
     output: true
     permalink: /:name
-#  career_studentRA:
-#    output: true
-#    permalink: /career/studentRA:slug
+  career_studentRA:
+    output: true
+    permalink: /career/studentRA:slug
 
 # Pages Path
 defaults:
