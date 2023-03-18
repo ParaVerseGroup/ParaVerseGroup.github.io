@@ -28,9 +28,6 @@ collections:
   authors:
     output: true
     permalink: /:name
-  career_studentRA:
-    output: true
-    permalink: /career/studentRA:slug
 
 # Pages Path
 defaults:
@@ -53,6 +50,11 @@ defaults:
       type: "authors"
     values:
       layout: "author"
+  - scope:
+      path: "/career/studentRA"
+      type: "career_studentRA"
+    values:
+      layout: "post"
 
 sass:
   sass_dir: _sass
