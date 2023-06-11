@@ -31,7 +31,7 @@ categories: career
 3. 与团队其他成员密切合作，确保项目的顺利进行。
 
 ## &#9200; 工作时间
-本职位无固定工作时长要求，只需按期交付任务。但每周工作时长不会超过工资所对应的工作时长（研究生时薪2023年约12.64£/时）。
+本职位无固定工作时长要求，只需按期交付任务。但每周工作时长不会超过工资所对应的工作时长（研究生时薪2023年约£12.64/时， 博士16.80/时）。
 
 ## &#128176; 工资待遇
 工资£300-500起/月。具体的薪资将根据您的经验和技能而定。
@@ -62,7 +62,7 @@ We are looking for 1-2 talented student research assistants focused on Unreal En
 3. Collaborate closely with other team members to ensure smooth project progress.
 
 ## &#9200; Working Hours
-This position does not require fixed working hours, just need to deliver tasks on time. However, the weekly working hours will not exceed the work hours corresponding to the wage (in 2023, the hourly wage for postgraduate students is approximately £12.64).
+This position does not require fixed working hours, just need to deliver tasks on time. However, the weekly working hours will not exceed the work hours corresponding to the wage (in 2023, the hourly wage for postgraduate students is approximately £12.64， PhD £16.80).
 
 ## &#128176; Compensation
 The wage starts from £300-500 per month. The specific salary will be determined based on your experience and skills.
