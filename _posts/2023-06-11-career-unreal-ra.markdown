@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  Student Research Assistant in Unreal Engine Application Developing
+title:  学生研究助理 - 虚幻引擎应用开发/Student Research Assistant in Unreal Engine Application Developing
 description:
 date:   2023-06-11 15:01:35 +0300
 author: ruisun
-image:  '/images/career_posts/unreal_engine4_logo.png'
+image:  '/images/career_posts/unreal_engine4_logo.jpg'
 tags:   [student research assistant]
 tags_color: '#008E9B'
 categories: career
@@ -39,6 +39,7 @@ categories: career
 ## &#128236; 如何申请
 感兴趣的同学请将个人简历发送到邮箱ray.ruisun@qq.com, 附上作品集或者示例公开代码访问链接最好。
 
+---
 
 # &#128227; Position: Student Research Assistant - Unreal Engine Application Development
 
